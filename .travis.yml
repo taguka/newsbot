@@ -64,12 +64,12 @@ script:
   - make test
   - cd ..
   - bash test_canonical.sh
-  - perf record -F 99 -g ./build/tgnews top demo_data.json --print_top_debug_info > demo_top.json
+  - perf record -F 99 -g ./build/newsbot top demo_data.json --print_top_debug_info > demo_top.json
   - perf script > out.perf
   - mkdir output
   - ./FlameGraph/stackcollapse-perf.pl out.perf | ./FlameGraph/flamegraph.pl > output/flamegraph.svg
   - bash build_viewer.sh viewer/templates output "03 May" demo_data.json ru_cat_data.json ru_cat_target.json en_cat_data.json en_cat_target.json ru_clustering_data.jsonl ru_threads_target.tsv
-  - php7.4 dc-check.php build/tgnews all 8000 html_sample
+  - php7.4 dc-check.php build/newsbot all 8000 html_sample
 
 deploy:
   provider: pages

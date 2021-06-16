@@ -18,10 +18,10 @@ RU_THREADS_OUTPUT=$(mktemp)
 RU_THREADS_METRICS=$(mktemp)
 VERSION=$(git log --pretty=format:'%h' -n 1)
 
-./build/tgnews top ${DEMO_DATA} --print_top_debug_info > ${DEMO_TOPS}
-./build/tgnews categories ${RU_CAT_DATA} --languages ru --save_not_news > ${RU_CAT_OUTPUT}
-./build/tgnews categories ${EN_CAT_DATA} --languages en --save_not_news > ${EN_CAT_OUTPUT}
-./build/tgnews threads ${RU_THREADS_DATA} --languages ru > ${RU_THREADS_OUTPUT}
+./build/newsbot top ${DEMO_DATA} --print_top_debug_info > ${DEMO_TOPS}
+./build/newsbot categories ${RU_CAT_DATA} --languages ru --save_not_news > ${RU_CAT_OUTPUT}
+./build/newsbot categories ${EN_CAT_DATA} --languages en --save_not_news > ${EN_CAT_OUTPUT}
+./build/newsbot threads ${RU_THREADS_DATA} --languages ru > ${RU_THREADS_OUTPUT}
 
 python3.6 viewer/convert.py \
     --documents-file ${DEMO_DATA} \
