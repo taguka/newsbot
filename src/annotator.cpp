@@ -168,9 +168,9 @@ std::optional<TDbDocument> TAnnotator::AnnotateDocument(const TDocument& documen
         dbDoc.OutLinks = document.OutLinks;
     }
 
-    if (Mode == "languages") {
-        return dbDoc;
-    }
+ //   if (Mode == "languages") {
+ //       return dbDoc;
+ //   }
 
     if (document.Text.length() < Config.min_text_length()) {
         return dbDoc;

@@ -129,6 +129,8 @@ int main(int argc, char** argv) {
                 outputJson.push_back(object);
             }
             std::cout << outputJson.dump(4) << std::endl;
+            std::ofstream o("output/tg_languages.json");
+            o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode == "json") {
             nlohmann::json outputJson = nlohmann::json::array();
@@ -136,6 +138,8 @@ int main(int argc, char** argv) {
                 outputJson.push_back(doc.ToJson());
             }
             std::cout << outputJson.dump(4) << std::endl;
+            std::ofstream o("tg_json.json");
+            o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode == "news") {
             nlohmann::json articles = nlohmann::json::array();
@@ -145,6 +149,8 @@ int main(int argc, char** argv) {
             nlohmann::json outputJson = nlohmann::json::object();
             outputJson["articles"] = articles;
             std::cout << outputJson.dump(4) << std::endl;
+            std::ofstream o("tg_news.json");
+            o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode == "categories") {
             nlohmann::json outputJson = nlohmann::json::array();
@@ -174,6 +180,8 @@ int main(int argc, char** argv) {
                 outputJson.push_back(object);
             }
             std::cout << outputJson.dump(4) << std::endl;
+            std::ofstream o("tg_categories.json");
+            o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode != "threads" && mode != "top") {
             assert(false);
@@ -211,6 +219,8 @@ int main(int argc, char** argv) {
                 }
             }
             std::cout << outputJson.dump(4) << std::endl;
+            std::ofstream o("tg_threads.json");
+            o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode != "top") {
             assert(false);
@@ -288,6 +298,8 @@ int main(int argc, char** argv) {
             outputJson.push_back(rubricTop);
         }
         std::cout << outputJson.dump(4) << std::endl;
+        std::ofstream o("tg_top.json");
+        o << std::setw(4) << outputJson << std::endl;
         return 0;
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
