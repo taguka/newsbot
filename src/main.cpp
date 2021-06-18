@@ -138,7 +138,7 @@ int main(int argc, char** argv) {
                 outputJson.push_back(doc.ToJson());
             }
             std::cout << outputJson.dump(4) << std::endl;
-            std::ofstream o("tg_json.json");
+            std::ofstream o("output/tg_json.json");
             o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode == "news") {
@@ -149,7 +149,7 @@ int main(int argc, char** argv) {
             nlohmann::json outputJson = nlohmann::json::object();
             outputJson["articles"] = articles;
             std::cout << outputJson.dump(4) << std::endl;
-            std::ofstream o("tg_news.json");
+            std::ofstream o("output/tg_news.json");
             o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode == "categories") {
@@ -180,7 +180,7 @@ int main(int argc, char** argv) {
                 outputJson.push_back(object);
             }
             std::cout << outputJson.dump(4) << std::endl;
-            std::ofstream o("tg_categories.json");
+            std::ofstream o("output/tg_categories.json");
             o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode != "threads" && mode != "top") {
@@ -219,7 +219,7 @@ int main(int argc, char** argv) {
                 }
             }
             std::cout << outputJson.dump(4) << std::endl;
-            std::ofstream o("tg_threads.json");
+            std::ofstream o("output/tg_threads.json");
             o << std::setw(4) << outputJson << std::endl;
             return 0;
         } else if (mode != "top") {
@@ -298,7 +298,7 @@ int main(int argc, char** argv) {
             outputJson.push_back(rubricTop);
         }
         std::cout << outputJson.dump(4) << std::endl;
-        std::ofstream o("tg_top.json");
+        std::ofstream o("output/tg_top.json");
         o << std::setw(4) << outputJson << std::endl;
         return 0;
     } catch (std::exception& e) {
