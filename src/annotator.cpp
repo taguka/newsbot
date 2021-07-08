@@ -78,16 +78,20 @@ std::vector<TDbDocument> TAnnotator::AnnotateAll(
     TThreadPool threadPool;
     std::vector<TDbDocument> docs;
     std::vector<std::future<std::optional<TDbDocument>>> futures;
+    nlohmann::json json;
+    nlohmann::json  item;
     if (inputFormat == tg::IF_JSON) {
         std::vector<TDocument> parsedDocs;
         for (const std::string& path: fileNames) {
             std::ifstream fileStream(path);
-            nlohmann::json json;
-            fileStream >> json;
-            for (const nlohmann::json& obj : json) {
-                parsedDocs.emplace_back(obj);
+            std::string content;
+            while (getline(fileStream, content)) {
+            	json = nlohmann::json::parse(content);
+            	item = json.at("_source");
+            	parsedDocs.emplace_back(item);
             }
         }
+
         parsedDocs.shrink_to_fit();
         docs.reserve(parsedDocs.size());
         futures.reserve(parsedDocs.size());
@@ -122,6 +126,9 @@ std::vector<TDbDocument> TAnnotator::AnnotateAll(
     for (auto& futureDoc : futures) {
         std::optional<TDbDocument> doc = futureDoc.get();
         if (!doc) {
+            continue;
+        }
+        if (doc->Url.empty()) {
             continue;
         }
         if (Languages.find(doc->Language) == Languages.end()) {
@@ -168,9 +175,9 @@ std::optional<TDbDocument> TAnnotator::AnnotateDocument(const TDocument& documen
         dbDoc.OutLinks = document.OutLinks;
     }
 
-    if (Mode == "languages") {
-        return dbDoc;
-    }
+ //   if (Mode == "languages") {
+ //       return dbDoc;
+ //   }
 
     if (document.Text.length() < Config.min_text_length()) {
         return dbDoc;

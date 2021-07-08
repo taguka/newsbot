@@ -8,6 +8,7 @@
 #include <sstream>
 #include <fstream>
 
+
 TDocument::TDocument(const char* fileName) {
     if (boost::algorithm::ends_with(fileName, ".html")) {
         FromHtml(fileName);
@@ -51,18 +52,20 @@ void TDocument::FromJson(const char* fileName) {
 }
 
 void TDocument::FromJson(const nlohmann::json& json) {
-    json.at("url").get_to(Url);
-    json.at("site_name").get_to(SiteName);
-    json.at("timestamp").get_to(FetchTime);
-    json.at("title").get_to(Title);
-    json.at("description").get_to(Description);
-    json.at("text").get_to(Text);
-    if (json.contains("file_name")) {
-        json.at("file_name").get_to(FileName);
-    }
-    if (json.contains("out_links")) {
-        json.at("out_links").get_to(OutLinks);
-    }
+	std::string dt;
+	struct tm tm{};
+	dt = json.at("published_at");
+	std::istringstream ss(dt);
+	ss >> std::get_time(&tm,"%Y-%m-%dT%H:%M:%S");
+	std::time_t t = mktime(&tm);
+	FetchTime=long(t);
+	if (json.contains("url_k")){
+		json.at("url_k").get_to(Url);
+	}
+    json.at("source_name_tk").get_to(SiteName);
+    json.at("title_tk").get_to(Title);
+    json.at("body_t").get_to(Text);
+    FileName = to_string(json.at("id"));
 }
 
 std::string GetFullText(const tinyxml2::XMLElement* element) {
