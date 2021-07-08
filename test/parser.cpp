@@ -21,7 +21,6 @@ BOOST_AUTO_TEST_CASE( parser )
 
     BOOST_REQUIRE_EQUAL(htmlDocument.Title, jsonDocument.Title);
     BOOST_REQUIRE_EQUAL(htmlDocument.Url, jsonDocument.Url);
-    BOOST_REQUIRE_EQUAL(htmlDocument.Description, jsonDocument.Description);
     BOOST_REQUIRE_EQUAL(htmlDocument.SiteName, jsonDocument.SiteName);
     BOOST_REQUIRE_EQUAL(htmlDocument.Author, jsonDocument.Author);
 }

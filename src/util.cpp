@@ -87,4 +87,3 @@ uint64_t DateToTimestamp(const std::string& date) {
     }
     return timestamp > 0 ? timestamp : 0;
 }
-

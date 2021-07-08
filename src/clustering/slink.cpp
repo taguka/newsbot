@@ -78,6 +78,7 @@ TClusters TSlinkClustering::Cluster(
         embeddingKeysWeights[embeddingKeyWeight.embedding_key()] = embeddingKeyWeight.weight();
     }
     const size_t docSize = docs.size();
+
     const size_t intersectionSize = Config.intersection_size();
     std::vector<size_t> labels;
     labels.reserve(docSize);

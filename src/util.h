@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <google/protobuf/text_format.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
+#include <iomanip>
 #include <nlohmann_json/json.hpp>
 
 #include <string>
