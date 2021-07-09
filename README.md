@@ -24,7 +24,7 @@ $ unzip libtorch-cxx11-abi-shared-with-deps-1.5.0+cpu.zip
 
 For MacOS use https://download.pytorch.org/libtorch/cpu/libtorch-macos-1.5.0.zip
 
-To build binary (in "tgcontest" dir):
+To build binary (in "newsbot" dir):
 ```
 $ mkdir build && cd build && Torch_DIR="../libtorch" cmake -DCMAKE_BUILD_TYPE=Release .. && make -j4
 ```
@@ -74,27 +74,6 @@ Run on sample:
 * Alexa agency rating: [alexa_rating_4_fixed.txt](https://www.dropbox.com/s/fry1gsd1mans9jm/alexa_rating_4_fixed.txt)
 * XLM-RoBERTa for categorization (pytorch-lightning checkpoint): [xlmr_en_ru_cat_v1.tar.gz](https://www.dropbox.com/s/y6leppzf2l43eqo/xlmr_en_ru_cat_v1.tar.gz)
 
-## Data
-* Russian news from 11.01.2019 to 10.05.2020 with gaps: [ru_tg_1101_0510.jsonl.tar.gz](https://www.dropbox.com/s/r8iqi6h6x1w0pzv/ru_tg_1101_0510.jsonl.tar.gz)
-* Russian news from 11.05.2020 to 17.05.2020: [ru_tg_0511_0517.jsonl.tar.gz](https://www.dropbox.com/s/zvv1qvm1yidvc2p/ru_tg_0511_0517.jsonl.tar.gz)
-* English news from 11.01.2019 to 10.05.2020 with gaps: [en_tg_1101_0510.jsonl.tar.gz](https://www.dropbox.com/s/9f11mdgv4qsjrvb/en_tg_1101_0510.jsonl.tar.gz)
-* English news from 11.05.2020 to 17.05.2020: [en_tg_0511_0517.jsonl.tar.gz](https://www.dropbox.com/s/qj7s8ek91usmcxp/en_tg_0511_0517.jsonl.tar.gz)
 
-## Markup
-* Russian categories raw train markup: [ru_cat_v4_train_raw_markup.tsv](https://www.dropbox.com/s/24rsyxxp00kxjzr/ru_cat_v4_train_raw_markup.tsv)
-* Russian categories aggregated train markup: [ru_cat_v4_train_annot.json](https://www.dropbox.com/s/2rpsabep7tstmkq/ru_cat_v4_train_annot.json)
-* Russian categories aggregated train markup in fastText format: [ft_ru_cat_v4_train.txt](https://www.dropbox.com/s/tdz4k44o0jmrpi5/ft_ru_cat_v4_train.txt)
-* Russian categories manual train markup: [ru_cat_v4_train_manual_annot.json](https://www.dropbox.com/s/fibw7remhk2bodl/ru_cat_v4_train_manual_annot.json)
-* Russian categoreis manual train markup in fastText format: [ft_ru_cat_v4_train_manual.txt](https://www.dropbox.com/s/y9jg50rck1pg1w1/ft_ru_cat_v4_train_manual.txt)
-* Russian categoreis raw test markup: [ru_cat_v4_test_raw_markup.tsv](https://www.dropbox.com/s/9cbubupcht00kqn/ru_cat_v4_test_raw_markup.tsv)
-* Russian categories aggregated test markup: [ru_cat_v4_test_annot.json](https://www.dropbox.com/s/ur7jhiyi22tmzxd/ru_cat_v4_test_annot.json)
-* Russian categories aggregated test markup in fastText format: [ft_ru_cat_v4_test.txt](https://www.dropbox.com/s/89opmh9alx7tfy3/ft_ru_cat_v4_test.txt)
-* English categories aggregated train markup: [en_cat_v4_train_annot.json](https://www.dropbox.com/s/fysoyx1mz8rf6rs/en_cat_v4_train_annot.json)
-* English categories aggregated train markup in fastText format: [ft_en_cat_v4_train.txt](https://www.dropbox.com/s/7a2k2tmkf61nsks/ft_en_cat_v4_train.txt)
-* English categories aggregated test markup: [en_cat_v4_test_annot.json](https://www.dropbox.com/s/ucwzhucwgtuy8k1/en_cat_v4_test_annot.json)
-* English categories aggregated test markup in fastText format: [ft_en_cat_v4_test.txt](https://www.dropbox.com/s/yga8i06hqv0pvqc/ft_en_cat_v4_test.txt)
-* Russian clustering pairs: [ru_pairs_raw_markup.tsv](https://www.dropbox.com/s/jugcl80vfd4wg0h/ru_pairs_raw_markup.tsv)
-* English clustering pairs: [en_pairs_raw_markup.tsv](https://www.dropbox.com/s/1zs05c3frm8cygq/en_pairs_raw_markup.tsv)
-* Russian clustering pairs for one day (0517): [ru_clustering_0517.tsv](https://www.dropbox.com/s/rrkxdnml6ukql8j/ru_clustering_0517.tsv)
 
 
