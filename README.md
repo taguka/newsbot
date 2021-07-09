@@ -37,7 +37,15 @@ $ bash download_data.sh
 Run on sample:
 ```
 ./build/newsbot top data --ndocs 10000
+
 ```
+
+Newsviewer: 
+
+```
+bash build_viewer.sh viewer/templates input_file.json output_folder
+```
+
 
 ## Training
 
@@ -64,15 +72,6 @@ Run on sample:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q0S5OvramxxqQZnaSIH8xWfmOsWeKhIz)
 * XLM-RoBERTa pseudo-labeling for categorization: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fEmNPi41mnxLrc4hqamqi72xDCCH0Ima)
 
-## Models
-* Language detection model (2 round): [lang_detect_v10.ftz](https://www.dropbox.com/s/hoapmnvqlknmu6v/lang_detect_v10.ftz)
-* Russian FastText vectors (2 round): [ru_vectors_v3.bin](https://www.dropbox.com/s/vttjivmmxw7leea/ru_vectors_v3.bin)
-* Russian categories detection model (2 round): [ru_cat_v5.ftz](https://www.dropbox.com/s/23x35wuet280eh6/ru_cat_v5.ftz)
-* English FastText vectors (2 round): [en_vectors_v3.bin](https://www.dropbox.com/s/6aaucelizfx7xl6/en_vectors_v3.bin)
-* English categories detection model (2 round): [en_cat_v5.ftz](https://www.dropbox.com/s/luh60dd0uw8p9ar/en_cat_v5.ftz)
-* PageRank-based agency rating: [pagerank_rating.txt](https://www.dropbox.com/s/0o9xr2pwuqeh17k/pagerank_rating.txt)
-* Alexa agency rating: [alexa_rating_4_fixed.txt](https://www.dropbox.com/s/fry1gsd1mans9jm/alexa_rating_4_fixed.txt)
-* XLM-RoBERTa for categorization (pytorch-lightning checkpoint): [xlmr_en_ru_cat_v1.tar.gz](https://www.dropbox.com/s/y6leppzf2l43eqo/xlmr_en_ru_cat_v1.tar.gz)
 
 
 
