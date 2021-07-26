@@ -202,12 +202,12 @@ int main(int argc, char** argv) {
                     };
                     outputJson.push_back(object);
 
- //                   if (cluster.GetSize() >= 2) {
-//                       LOG_DEBUG("\n         CLUSTER: " << cluster.GetTitle());
- //                       for (const TDbDocument& doc : cluster.GetDocuments()) {
- //                           LOG_DEBUG("  " << doc.Title << " (" << doc.Url << ")");
- //                       }
-  //                  }
+                    if (cluster.GetSize() >= 2) {
+                       LOG_DEBUG("\n         CLUSTER: " << cluster.GetTitle());
+                        for (const TDbDocument& doc : cluster.GetDocuments()) {
+                            LOG_DEBUG("  " << doc.Title << " (" << doc.Url << ")");
+                        }
+                    }
                 }
             }
             std::cout << outputJson.dump(4) << std::endl;
