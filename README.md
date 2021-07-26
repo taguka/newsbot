@@ -55,9 +55,12 @@ bash build_viewer.sh viewer/templates input_file.json output_folder
 * Russian fasttext category classifier training:
 [CatTrainRu.ipynb](https://github.com/taguka/newsbot/blob/main//scripts/CatTrainRu.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IwkAy4W1Rg36ZMVbhOWCUhfGyBp_AFpe)
-* Russian text embedder with **triplet loss** training (v3):
+* Russian text embedder with **triplet loss** training (v1):
+[SimilarityRuTorchTripletLoss.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/SimilarityRuTorchTripletLoss.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1umK5TbUR3YBy3rKFcxjgLNbUXt0SsZan)
-*
+* PageRank rating calculation:
+[PageRankRating.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/PageRankRating.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fD3A5XkCXMNve51vWDQIIdLkPLdYebPX)
 * Russian **ELMo-based** sentence embedder training (not used):
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q0S5OvramxxqQZnaSIH8xWfmOsWeKhIz)
 * XLM-RoBERTa pseudo-labeling for categorization: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fEmNPi41mnxLrc4hqamqi72xDCCH0Ima)
