@@ -37,42 +37,41 @@ $ bash download_data.sh
 Run on sample:
 ```
 ./build/newsbot top data --ndocs 10000
+
 ```
+
+Newsviewer: 
+
+```
+bash build_viewer.sh viewer/templates input_file.json output_folder
+```
+
 
 ## Training
 
 * Russian FastText vectors training:
-[VectorsRu.ipynb](https://github.com/IlyaGusev/tgcontest/blob/master/scripts/VectorsRu.ipynb)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QeyhqsHy5MO3yzvsn446LsqK_PqOjIVb)
+[VectorsRu.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/VectorsRu.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KbD7gKNCMhkoOA7_vVf32XrfaaBNhRlV)
 * Russian fasttext category classifier training:
-[CatTrainRu.ipynb](https://github.com/IlyaGusev/tgcontest/blob/master/scripts/CatTrainRu.ipynb)
+[CatTrainRu.ipynb](https://github.com/taguka/newsbot/blob/main//scripts/CatTrainRu.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U7Wxm5eDnrBRWE_logCSJIq6DzTFV0Zo)
 * Russian text embedder with **triplet loss** training (v3):
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vp_qbWKtqtqgNLW5Upp4Gh2UL36zdTvT)
 * English FastText vectors training:
-[VectorsEn.ipynb](https://github.com/IlyaGusev/tgcontest/blob/master/scripts/VectorsEn.ipynb)
+[VectorsEn.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/VectorsEn.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lbmgJ_iGBdwKdkU_1l1-WZuO7XbYZlWQ)
 * English fasttext category classifier training:
-[CatTrainEn.ipynb](https://github.com/IlyaGusev/tgcontest/blob/master/scripts/CatTrainEn.ipynb)
+[CatTrainEn.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/CatTrainEn.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ayg5dtA_KdhzVehN4-_EiyIcwRhBVSob)
 * English text embedder with **triplet loss** training (v3):
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o1B50aktpHJmEzHCQ8lPV3yZOtKSTXa3)
 * PageRank rating calculation:
-[PageRankRating.ipynb](https://github.com/IlyaGusev/tgcontest/blob/master/scripts/PageRankRating.ipynb)
+[PageRankRating.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/PageRankRating.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1bd35S0rl_Uysiuz_7fmkYRArzNcP-wZB)
 * Russian **ELMo-based** sentence embedder training (not used):
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q0S5OvramxxqQZnaSIH8xWfmOsWeKhIz)
 * XLM-RoBERTa pseudo-labeling for categorization: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fEmNPi41mnxLrc4hqamqi72xDCCH0Ima)
 
-## Models
-* Language detection model (2 round): [lang_detect_v10.ftz](https://www.dropbox.com/s/hoapmnvqlknmu6v/lang_detect_v10.ftz)
-* Russian FastText vectors (2 round): [ru_vectors_v3.bin](https://www.dropbox.com/s/vttjivmmxw7leea/ru_vectors_v3.bin)
-* Russian categories detection model (2 round): [ru_cat_v5.ftz](https://www.dropbox.com/s/23x35wuet280eh6/ru_cat_v5.ftz)
-* English FastText vectors (2 round): [en_vectors_v3.bin](https://www.dropbox.com/s/6aaucelizfx7xl6/en_vectors_v3.bin)
-* English categories detection model (2 round): [en_cat_v5.ftz](https://www.dropbox.com/s/luh60dd0uw8p9ar/en_cat_v5.ftz)
-* PageRank-based agency rating: [pagerank_rating.txt](https://www.dropbox.com/s/0o9xr2pwuqeh17k/pagerank_rating.txt)
-* Alexa agency rating: [alexa_rating_4_fixed.txt](https://www.dropbox.com/s/fry1gsd1mans9jm/alexa_rating_4_fixed.txt)
-* XLM-RoBERTa for categorization (pytorch-lightning checkpoint): [xlmr_en_ru_cat_v1.tar.gz](https://www.dropbox.com/s/y6leppzf2l43eqo/xlmr_en_ru_cat_v1.tar.gz)
 
 
 

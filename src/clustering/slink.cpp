@@ -288,8 +288,10 @@ Eigen::MatrixXf TSlinkClustering::CalcDistances(
         Eigen::MatrixXf points(docSize, embSize);
         std::vector<size_t> badPoints;
         std::vector<TDbDocument>::const_iterator docsIt = begin;
+
         for (size_t i = 0; i < docSize; ++i) {
             std::vector<float> embedding = docsIt->Embeddings.at(embeddingKey);
+
             Eigen::Map<Eigen::VectorXf, Eigen::Unaligned> docVector(embedding.data(), embedding.size());
             if (std::abs(docVector.norm() - 0.0) > 0.00000001) {
                 points.row(i) = docVector / docVector.norm();

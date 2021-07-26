@@ -86,9 +86,16 @@ std::vector<TDbDocument> TAnnotator::AnnotateAll(
             std::ifstream fileStream(path);
             std::string content;
             while (getline(fileStream, content)) {
-            	json = nlohmann::json::parse(content);
-            	item = json.at("_source");
-            	parsedDocs.emplace_back(item);
+            	try
+            	{
+            		json = nlohmann::json::parse(content);
+            		item = json.at("_source");
+            		parsedDocs.emplace_back(item);
+            	}
+            	catch (nlohmann::json::parse_error& ex)
+            	{
+            		std::cerr << "parse error: " << content << std::endl;
+            	}
             }
         }
 
@@ -104,7 +111,9 @@ std::vector<TDbDocument> TAnnotator::AnnotateAll(
             std::ifstream fileStream(path);
             std::string record;
             while (std::getline(fileStream, record)) {
-                parsedDocs.emplace_back(nlohmann::json::parse(record));
+            	json = nlohmann::json::parse(record);
+            	item = json.at("_source");
+                parsedDocs.emplace_back(item);
             }
         }
         parsedDocs.shrink_to_fit();

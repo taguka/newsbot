@@ -95,5 +95,6 @@ std::vector<float> TFastTextEmbedder::CalcEmbedding(const std::string& input) co
     for (size_t i = 0; i < outputDim; i++) {
         resultVector[i] = outputTensorPtr[i];
     }
+
     return resultVector;
 }
