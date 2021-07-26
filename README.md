@@ -65,6 +65,15 @@ bash build_viewer.sh viewer/templates input_file.json output_folder
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q0S5OvramxxqQZnaSIH8xWfmOsWeKhIz)
 * XLM-RoBERTa pseudo-labeling for categorization: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fEmNPi41mnxLrc4hqamqi72xDCCH0Ima)
 
+* English FastText vectors training:
+[VectorsEn.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/VectorsEn.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1eXIGaw9n7PSgUD_QBucmgEjgjIOotdqg)
+* English fasttext category classifier training:
+[CatTrainEn.ipynb](https://github.com/taguka/newsbot/blob/main//scripts/CatTrainEn.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UOWpkq84AHnz9fWxtu-_XAr48-FOQ24g)
+* English text embedder with **triplet loss** training (v1):
+[SimilarityEnTorchTripletLoss.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/SimilarityEnTorchTripletLoss.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14pTBKd4inJ97WawVGY7bVTgGmyklBM-W)
 
 
 
