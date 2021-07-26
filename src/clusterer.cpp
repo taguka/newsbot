@@ -52,7 +52,6 @@ TClusterIndex TClusterer::Cluster(std::vector<TDbDocument>&& docs) const {
     }
     docs.shrink_to_fit();
     docs.clear();
-
     for (const auto& [language, clustering] : Clusterings) {
         TClusters langClusters = clustering->Cluster(lang2Docs[language]);
         std::stable_sort(

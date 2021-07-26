@@ -5,6 +5,8 @@
 #include <cassert>
 
 #include <onmt/Tokenizer.h>
+#include <iostream>
+#include <fstream>
 
 TFastTextEmbedder::TFastTextEmbedder(
     const std::string& vectorModelPath
@@ -44,11 +46,13 @@ std::vector<float> TFastTextEmbedder::CalcEmbedding(const std::string& input) co
     fasttext::Vector minVector(vectorSize);
     std::string word;
     size_t count = 0;
+
     while (ss >> word) {
         if (count > MaxWords) {
             break;
         }
         VectorModel.getWordVector(wordVector, word);
+
         float norm = wordVector.norm();
         if (norm < 0.0001f) {
             continue;
@@ -78,7 +82,6 @@ std::vector<float> TFastTextEmbedder::CalcEmbedding(const std::string& input) co
         return std::vector<float>(maxVector.data(), maxVector.data() + maxVector.size());
     }
     assert(Mode == tg::AM_MATRIX);
-
     int dim = static_cast<int>(vectorSize);
     auto tensor = torch::zeros({dim * 3}, torch::requires_grad(false));
     tensor.slice(0, 0, dim) = torch::from_blob(avgVector.data(), {dim});
@@ -87,7 +90,6 @@ std::vector<float> TFastTextEmbedder::CalcEmbedding(const std::string& input) co
 
     std::vector<torch::jit::IValue> inputs;
     inputs.emplace_back(tensor.unsqueeze(0));
-
     at::Tensor outputTensor = Model.forward(inputs).toTensor().squeeze(0).contiguous();
     float* outputTensorPtr = outputTensor.data_ptr<float>();
     size_t outputDim = outputTensor.size(0);
@@ -95,5 +97,6 @@ std::vector<float> TFastTextEmbedder::CalcEmbedding(const std::string& input) co
     for (size_t i = 0; i < outputDim; i++) {
         resultVector[i] = outputTensorPtr[i];
     }
+
     return resultVector;
 }
