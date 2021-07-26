@@ -71,7 +71,7 @@ bash build_viewer.sh viewer/templates input_file.json output_folder
 * English fasttext category classifier training:
 [CatTrainEn.ipynb](https://github.com/taguka/newsbot/blob/main//scripts/CatTrainEn.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UOWpkq84AHnz9fWxtu-_XAr48-FOQ24g)
-* Russian text embedder with **triplet loss** training (v1):
+* English text embedder with **triplet loss** training (v1):
 [SimilarityEnTorchTripletLoss.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/SimilarityEnTorchTripletLoss.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14pTBKd4inJ97WawVGY7bVTgGmyklBM-W)
 
