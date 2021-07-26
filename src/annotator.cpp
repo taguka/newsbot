@@ -205,10 +205,8 @@ std::optional<TDbDocument> TAnnotator::AnnotateDocument(const TDocument& documen
         if (language != dbDoc.Language) {
             continue;
         }
-
         TDbDocument::TEmbedding value = embedder->CalcEmbedding(cleanTitle, cleanText);
         dbDoc.Embeddings.emplace(embeddingKey, std::move(value));
-
     }
     if (ComputeNasty) {
         dbDoc.Nasty = ComputeDocumentNasty(dbDoc);

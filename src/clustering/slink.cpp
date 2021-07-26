@@ -8,8 +8,6 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
-#include <iostream>
-#include <fstream>
 
 namespace {
 
@@ -85,13 +83,11 @@ TClusters TSlinkClustering::Cluster(
     std::vector<size_t> labels;
     labels.reserve(docSize);
 
-
     std::vector<TDbDocument>::const_iterator begin = docs.cbegin();
     std::unordered_map<size_t, size_t> oldLabelsToNew;
     size_t batchStart = 0;
     size_t prevBatchEnd = batchStart;
     size_t maxLabel = 0;
-
     while (prevBatchEnd < docs.size()) {
         size_t remainingDocsCount = docSize - batchStart;
         size_t batchSize = std::min(remainingDocsCount, static_cast<size_t>(Config.chunk_size()));
@@ -102,7 +98,6 @@ TClusters TSlinkClustering::Cluster(
         maxLabel = *std::max_element(newLabels.begin(), newLabels.end());
 
         assert(begin->Url == docs[batchStart].Url);
-
         for (size_t i = batchStart; i < batchStart + intersectionSize && i < labels.size(); i++) {
             size_t oldLabel = labels[i];
             size_t batchIndex = static_cast<size_t>(i - batchStart);
@@ -135,6 +130,7 @@ TClusters TSlinkClustering::Cluster(
         }
         label = it->second;
     }
+
     std::unordered_map<size_t, size_t> clusterLabels;
     TClusters clusters;
     for (size_t i = 0; i < docSize; ++i) {
@@ -308,7 +304,6 @@ Eigen::MatrixXf TSlinkClustering::CalcDistances(
         // Assuming points are on unit sphere
         // Normalize to [0.0, 1.0]
         Eigen::MatrixXf distances(docSize, docSize);
-
         distances = (-((points * points.transpose()).array() + 1.0f) / 2.0f + 1.0f) * weight;
         distances += distances.Identity(docSize, docSize) * weight;
         for (size_t index : badPoints) {
@@ -318,5 +313,6 @@ Eigen::MatrixXf TSlinkClustering::CalcDistances(
         distances = distances.cwiseMax(0.0f);
         finalDistances += distances;
     }
+
     return finalDistances;
 }
