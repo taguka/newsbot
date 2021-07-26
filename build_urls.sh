@@ -5,12 +5,15 @@ TOPS_DATA=$(mktemp)
 JSON_DATA=$(mktemp)
 
 
-./build/newsbot json ${INPUT_DATA} > ${JSON_DATA}
-./build/newsbot top ${INPUT_DATA} > ${TOPS_DATA}
+./newsbot json ${INPUT_DATA} > ${JSON_DATA}
+echo "convert json done..."
+./newsbot top ${INPUT_DATA} > ${TOPS_DATA}
+echo "top done..."
 
 python3 merge.py \
     --documents-file ${JSON_DATA} \
     --tops-file ${TOPS_DATA} \
-    --output-dir ${OUTPUT_DIR} \
-
+    --output-dir ${OUTPUT_DIR} 
+echo "merge done..."
+echo "end"
 

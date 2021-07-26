@@ -38,7 +38,7 @@ if __name__ == "__main__":
     parser.add_argument('--output-dir', type=str, default="output")
     parser.add_argument('--documents-file', type=str, required=True)
     parser.add_argument('--tops-file', type=str, required=True)
-    parser.add_argument('--nclusters', type=int, default=5)
+    parser.add_argument('--nclusters', type=int, default=100)
     args = parser.parse_args()
     convert(**vars(args))
 
