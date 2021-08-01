@@ -63,7 +63,6 @@ bash build_viewer.sh viewer/templates input_file.json output_folder
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fD3A5XkCXMNve51vWDQIIdLkPLdYebPX)
 * Russian **ELMo-based** sentence embedder training (not used):
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q0S5OvramxxqQZnaSIH8xWfmOsWeKhIz)
-* XLM-RoBERTa pseudo-labeling for categorization: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fEmNPi41mnxLrc4hqamqi72xDCCH0Ima)
 
 * English FastText vectors training:
 [VectorsEn.ipynb](https://github.com/taguka/newsbot/blob/main/scripts/VectorsEn.ipynb)
