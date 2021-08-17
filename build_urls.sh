@@ -4,7 +4,7 @@ OUTPUT_DIR="$2"
 TOPS_DATA=$(mktemp)
 JSON_DATA=$(mktemp)
 
-
+echo "Start..."
 ./newsbot json ${INPUT_DATA} > ${JSON_DATA}
 echo "convert json done..."
 ./newsbot top ${INPUT_DATA} > ${TOPS_DATA}
